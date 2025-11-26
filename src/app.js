@@ -17,6 +17,11 @@ const botNumber = document.createElement(`div`)
 
 // funciones
 const randomNumber = arr => arr[Math.floor(Math.random()*arr.length)]
+
+const colorByPalo = (palo) => {
+  return palo === `♥` || palo === `♦` ? `text-danger` : `text-dark`
+} 
+
 console.log(randomNumber(valorCard))
 
 
@@ -26,8 +31,8 @@ console.log(randomNumber(valorCard))
 firstDiv.id = `card`;
 
 topNumber.id = `topNumber`
-topNumber.classList = randomNumber(color)
 topNumber.innerHTML = randomNumber(palo);
+topNumber.classList = colorByPalo(topNumber.innerHTML)
 firstDiv.appendChild(topNumber)
 
 midNumber.id = `midNumber`
